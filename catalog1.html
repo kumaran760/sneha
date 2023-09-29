@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">MEFIRST</div>
+        <div class="nav-items">
+            <a href="/index.html">HOME</a>
+            <a href="/catalog.html">CATALOG</a>
+            <a href="/aboutme.html">ABOUT ME</a>
+            <a href="/hiii.html">CART</a>
+        </div>
+    </nav>
+    <section class="product-list">
+        <div class="product">
+            <img src="image1.jpg" alt="24k Gold facial mask">
+            <h3>24k Gold facial mask</h3>
+            <p>It improves your face like the sky...</p>
+            <p>Price: $32</p>
+            <button onclick="addToCart('24k Gold facial mask', 32, 'image1.jpg')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="image2.jpg" alt="Mcaffeine">
+            <h3>Mcaffeine</h3>
+            <p>Mcaffeine face wash to remove tan & deeply cleanse - 100ml</p>
+            <p>Price: $20</p>
+            <button onclick="addToCart('Mcaffeine', 20, 'image2.jpg')">Add to Cart</button>
+        </div>
+        <!-- Add more product listings here -->
+    </section>
+
+    <script>
+        // JavaScript code to handle adding products to the cart
+        function addToCart(productName, price, img) {
+            const cartItem = { productName, price, img };
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(cartItem);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${productName} has been added to the cart.`);
+        }
+    </script>
+</body>
+</html>

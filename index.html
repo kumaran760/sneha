@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me First</title>
+    <link rel="stylesheet" href="stylee.css" />
+</head>
+<body>
+    <nav>
+        <div class="logo">MEFIRST</div>
+        <div class="nav-items">
+            <a href="/jjj.html">HOME</a>
+            <a href="/home.html">CATALOG</a>
+            <a href="/aboutme.html">ABOUT ME</a>
+            <a href="/cart.html">CART</a>
+        </div>
+    </nav>
+    <main>
+        <div class="me">
+            <h1>Welcome to Me First</h1>
+            <p>Your source for top-quality products.....</p>
+        </div>
+    </main>
+    <section class="offers">
+        <div class="offers-on">
+            <div class="product-container">
+                <div class="offers-off">
+                    <h3>24k Gold facial mask</h3>
+                    <p>It improves your face like the sky...</p>
+                    <p><price>Price: 32$/-</price></p>
+                    <button onclick="addToCart('24k Gold facial mask', 32)">Add to Cart</button>
+                </div>
+            <div class="offers-offe">
+                <img src="image1.jpg" alt="Image Description" width="300" height="200">
+            </div>
+            </div>
+        </div>
+    </section>
+    <p style="text-align: center;" class="hi">Thank you for considering us!!!!</p>
+    <footer>
+        <div class="logo">MEFIRST&#169;</div>
+        <div class="nav-items">
+            <a href="/index.html">HOME</a>
+            <a href="/catalog.html">CATALOG</a>
+            <a href="/aboutme.html">ABOUT</a>
+        </div>
+    </footer>
+
+    <script>
+        // Function to add items to the cart
+        function addToCart(productName, price) {
+            // Retrieve the existing cart items from localStorage
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Add the new item to the cart
+            cartItems.push({ productName, price });
+
+            // Store the updated cart in localStorage
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+
+            // Remove the product from the page (optional)
+            const productContainer = document.querySelector('.product-container');
+            productContainer.style.display = 'none';
+
+            alert(`${productName} has been added to the cart.`);
+        }
+    </script>
+</body>
+</html>
+
